@@ -1,0 +1,10 @@
+{
+  "production":{
+        "NumberSignersRequired":-1,
+        "MaxCertLifetime":86400,
+        "SigningKeyFingerprint":"$fingerprint",
+        "AuthorizedUsers":{
+            "hash":"user@hostname"
+        }
+  }
+}
