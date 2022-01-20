@@ -12,7 +12,6 @@ generate_key() {
     ssh-keygen -b "${KEY_BITS}" -C 'certificate_authority' -N '' -f "${KEY_PATH}" -q
     pubkey=`cat "${KEY_PATH}".pub`
     echo "public key: ${pubkey}"
-    echo "MD5 fingerprint: $key"
 }
 
 # Start ssh-agent
@@ -25,7 +24,7 @@ ssh-add -q "${KEY_PATH}"
 
 # List SSH keys
 key=`ssh-add -E md5 -l | head -n 1 | awk '{ printf($2) }' | cut -c 5-`
-
+echo "MD5 fingerprint: $key"
 edit_configs $key
 
 # Start ssh-cert-authority server

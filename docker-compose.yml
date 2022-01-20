@@ -1,11 +1,11 @@
-version: '3.7'
+version: '3.4'
 services:
-  ssh-key-auth:
+  ssh-ca:
     build: .
     volumes:
-      - keys:/keys/
+      - "keys:/keys/"
     ports:
-      - 8080:8080
+      - "8080:8080"
 
 volumes:
  keys:
