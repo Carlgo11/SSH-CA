@@ -3,7 +3,9 @@ services:
   ssh-key-auth:
     build: .
     volumes:
-      - ./sign_certd_config.json:/config.json
-      #- ./my_ssh_cert_authority:/ssh.key
+      - keys:/keys/
     ports:
       - 8080:8080
+
+volumes:
+ keys:
